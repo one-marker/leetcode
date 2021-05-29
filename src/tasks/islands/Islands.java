@@ -1,6 +1,5 @@
 package tasks.islands;
 
-
 //Подсчет количества островов
 public class Islands {
 

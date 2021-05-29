@@ -1,4 +1,3 @@
-import tasks.islands.Islands;
 import tests.Tests;
 
 public class Main {
@@ -7,6 +6,8 @@ public class Main {
 
         Tests tests = new Tests();
         tests.islandsTest();
+
+        tests.maxPointsTest();
 
     }
 
