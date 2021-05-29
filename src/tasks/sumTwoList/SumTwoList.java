@@ -1,5 +1,6 @@
+package tasks.sumTwoList;
 
-
+//Сложить два списка (доделать)
 class ListNode {
     int val;
     ListNode next;
