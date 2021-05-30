@@ -1,7 +1,6 @@
 package tests;
 
 import tasks.islands.Islands;
-
 import tasks.maxPoints.Solution;
 
 public class Tests {
@@ -27,6 +26,12 @@ public class Tests {
         int[][] points = {{0, 2}, {0, 0},{0,1},{1, 1},{0,5},{0,3}};
         Solution solution = new Solution();
         System.out.println("Максимальное количество точек на одной линии: " + solution.maxPoints(points));
+    }
+
+    public void longestCommonPrefixTest() {
+        tasks.longestCommonPrefix.Solution solution = new tasks.longestCommonPrefix.Solution();
+        String[] strs = {"flower","flow","flight"};
+        System.out.println("Output: " + solution.longestCommonPrefix(strs));
     }
 
 
