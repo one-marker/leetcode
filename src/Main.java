@@ -9,6 +9,8 @@ public class Main {
 
         tests.maxPointsTest();
 
+        tests.runningSum();
+
     }
 
 

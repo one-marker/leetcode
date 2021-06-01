@@ -11,14 +11,13 @@ import java.util.HashMap;
 public class Solution {
 
     public int maxPoints(int[][] points) {
-        if (points.length == 1) {
+        if (points.length == 1)
             return 1;
-        }
+
         HashMap<Key, Line> lines = new HashMap<>();
 
-        for (int i = 0; i < points.length; i++) {
+        for (int i = 0; i < points.length; i++)
             lines.putAll(generateLines(i, points));
-        }
 
         int maxValue = 0;
         for (Line line : lines.values())
@@ -39,11 +38,10 @@ public class Solution {
                 Line newLine = new Line(points[index][0], points[index][1], pointX, pointY);
                 Key newKey = generateKey(newLine);
 
-                if (lines.containsKey(newKey)) {
+                if (lines.containsKey(newKey))
                     lines.get(newKey).addCount();
-                } else {
+                else
                     lines.put(newKey, newLine);
-                }
             }
         }
         return lines;
@@ -51,19 +49,17 @@ public class Solution {
 
     Key generateKey(Line line) {
 
-        if (line.getX1() == line.getX2()) {
+        if (line.getX1() == line.getX2())
             return new Key(0, 0, line.getX1());
-        }
 
-        if (line.getY1() == line.getY2()) {
+        if (line.getY1() == line.getY2())
             return new Key(0, line.getY1(), 0);
-        }
 
-        double tmpK = (double) (line.getY2() - line.getY1()) / (double) (line.getX2() - line.getX1());
-        int tmpB = (int) (line.getY1() - tmpK*line.getX1());
+        double k = (double) (line.getY2() - line.getY1()) / (double) (line.getX2() - line.getX1());
+        int b = (int) (line.getY1() - k*line.getX1());
 
 
-        return new Key(tmpK, tmpB, 0);
+        return new Key(k, b, 0);
     }
 
 }
